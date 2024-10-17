@@ -42,19 +42,9 @@ export const PopularContent = ({ data }: PopularContentProps) => {
       </Link>
 
       <div className="w-full flex items-center justify-center gap-2 flex-wrap px-2 mt-4">
-        {data.cuisine && (
-          <div className="rounded-md bg-emerald-500/10 px-2 py-[2px] text-[10px] font-sans capitalize">
-            {data.cuisine}
-          </div>
-        )}
         {data.category && (
           <div className="rounded-md bg-blue-500/10 px-2 py-[2px] text-[10px] font-sans capitalize">
             {data.category}
-          </div>
-        )}
-        {data.kitchen && (
-          <div className="rounded-md bg-red-500/10 px-2 py-[2px] text-[10px] font-sans capitalize">
-            {data.kitchen}
           </div>
         )}
         {data.size && (

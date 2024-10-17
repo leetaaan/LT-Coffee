@@ -37,19 +37,9 @@ const CartItem = ({ item }: CartItemProps) => {
           {item.name}
         </h2>
         <div className="w-full flex items-center justify-center gap-2 flex-wrap px-2 mt-4">
-          {item.cuisine && (
-            <div className="rounded-md bg-emerald-500/10 px-2 py-[2px] text-[11px] font-semibold capitalize">
-              {item.cuisine}
-            </div>
-          )}
           {item.category && (
             <div className="rounded-md bg-blue-500/10 px-2 py-[2px] text-[11px] font-semibold capitalize">
               {item.category}
-            </div>
-          )}
-          {item.kitchen && (
-            <div className="rounded-md bg-red-500/10 px-2 py-[2px] text-[11px] font-semibold capitalize">
-              {item.kitchen}
             </div>
           )}
           {item.size && (
