@@ -53,7 +53,7 @@ const Header = ({ userId }: HeaderProps) => {
                 <Button variant={"outline"}>Đăng nhập</Button>
               </Link>
               <Link href={"/sign-up"}>
-                <Button className=" bg-hero-400 text-white hover:bg-hero-500">
+                <Button className=" bg-hero/50 text-white hover:bg-hero-500 border">
                   Đăng ký
                 </Button>
               </Link>

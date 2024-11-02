@@ -9,6 +9,7 @@ export interface Products {
   size: string;
   isHot: boolean;
   isCold: boolean;
+  description:string
   qty: number;
 }
 

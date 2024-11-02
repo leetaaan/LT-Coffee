@@ -28,10 +28,7 @@ const Info = ({ product }: InforProps) => {
       <h1 className="text-3xl font-bold text-neutral-800">{product.name}</h1>
       <div className="mt-3 flex items-end justify-between">
         <p className="text-base text-left text-neutral-600">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis ex
-          dignissimos eius mollitia totam temporibus modi soluta consequuntur,
-          commodi nam? Est dolore provident natus numquam quidem? Provident
-          temporibus pariatur quod.
+          {product.description}
         </p>
       </div>
 

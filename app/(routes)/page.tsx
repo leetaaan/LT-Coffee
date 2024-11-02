@@ -11,7 +11,6 @@ export const revalidate = 0;
 
 const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
-  console.log(products);
 
   return (
     <>
@@ -52,7 +51,7 @@ const HomePage = async () => {
           <div className="">
             <div className="relative w-full h-[560px] flex items-center justify-center">
               <Image
-                src="/img/Food.png"
+                src="/img/Coffee.png"
                 alt="Hero"
                 className="w-full object-contain absolute"
                 fill
@@ -123,7 +122,7 @@ const HomePage = async () => {
             <Card className="shadow-lg relative rounded-md border-none flex flex-col items-center justify-end h-96 md:h-[520px] bg-hero/30">
               <Image
                 fill
-                src="/img/chef1.png"
+                src="/img/left.png"
                 alt="chef one"
                 className="w-full h-full object-contain"
               />
@@ -132,7 +131,7 @@ const HomePage = async () => {
             <Card className="shadow-lg relative rounded-md border-none flex flex-col items-center justify-end h-96 md:h-[520px] bg-hero/30">
               <Image
                 fill
-                src="/img/chef2.png"
+                src="/img/center.png"
                 alt="chef one"
                 className="w-full h-full object-contain"
               />
@@ -141,7 +140,7 @@ const HomePage = async () => {
             <Card className="shadow-lg relative rounded-md border-none flex flex-col items-center justify-end h-96 md:h-[520px] bg-hero/30">
               <Image
                 fill
-                src="/img/chef3.png"
+                src="/img/right.png"
                 alt="chef one"
                 className="w-full h-full object-contain"
               />

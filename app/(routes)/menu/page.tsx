@@ -19,7 +19,6 @@ interface MenuProps {
 }
 const MenuPage = async ({ searchParams }: MenuProps) => {
   const categories = await getCategories();
-  console.log(categories);
   
   const sizes = await getSizes();
   const products = await getProducts({
