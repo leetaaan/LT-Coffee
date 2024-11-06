@@ -51,14 +51,14 @@ export const MainNav = ({ className, scrolled, ...props }: MainNavProps) => {
             key={route.href}
             href={route.href}
             className={cn(
-              "text-base font-medium transition-colors hover:text-primary",
+              "text-base font-medium transition-colors hover:text-white hover:underline",
               route.active
                 ? `${
                     scrolled
-                      ? "text-hero font-bold"
-                      : "text-black dark:text-white"
+                      ? "text-white font-bold"
+                      : "text-white dark:text-white"
                   }`
-                : `${scrolled ? "text-black" : "text-white"}`
+                : `${scrolled ? "text-black" : "text-black"}`
             )}
           >
             {route.lable}

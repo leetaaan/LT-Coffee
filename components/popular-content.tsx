@@ -28,7 +28,7 @@ export const PopularContent = ({ data }: PopularContentProps) => {
       <div className="absolute -top-[4%] md:-top-[20%] overflow-hidden w-24 md:w-40 h-24 md:h-40 rounded-full bg-hero flex items-center justify-center p-1 md:p-2">
         <div className="w-full h-full rounded-full bg-white relative">
           <Image
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain hover:scale-150"
             fill
             alt={data.name}
             src={data.images[0].url}
@@ -36,13 +36,28 @@ export const PopularContent = ({ data }: PopularContentProps) => {
         </div>
       </div>
       <Link href={`/menu/${data.id}`} className="w-full px-2 text-center">
-        <CardTitle className="text-neutral-700 truncate w-full">
+        <CardTitle className="text-neutral-700 truncate w-full pt-2">
           {data.name}
         </CardTitle>
       </Link>
 
       <div className="w-full flex items-center justify-center gap-2 flex-wrap px-2 mt-4">
-        {data.category && (
+        {data.category === "Trà" && (
+          <div className="rounded-md bg-green-500/10 px-2 py-[2px] text-[10px] font-sans capitalize">
+            {data.category}
+          </div>
+        )}
+        {data.category === "Cà phê" && (
+          <div className="rounded-md bg-stone-500/10 px-2 py-[2px] text-[10px] font-sans capitalize">
+            {data.category}
+          </div>
+        )}
+        {data.category === "Bánh" && (
+          <div className="rounded-md bg-orange-500/10 px-2 py-[2px] text-[10px] font-sans capitalize">
+            {data.category}
+          </div>
+        )}
+        {data.category === "Topping" && (
           <div className="rounded-md bg-blue-500/10 px-2 py-[2px] text-[10px] font-sans capitalize">
             {data.category}
           </div>
@@ -55,7 +70,7 @@ export const PopularContent = ({ data }: PopularContentProps) => {
       </div>
 
       <CardDescription className="text-center px-2 my-2">
-       {data.description}
+        {data.description}
       </CardDescription>
 
       <div className="w-full flex items-center px-2 mt-4 gap-3">

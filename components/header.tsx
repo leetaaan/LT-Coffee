@@ -29,7 +29,7 @@ const Header = ({ userId }: HeaderProps) => {
     <header
       className={cn(
         "w-full z-50 transition",
-        scrolled ? " fixed top-0 left-0 bg-white shadow-lg" : " bg-transparent"
+        scrolled ? " fixed top-0 left-0 bg-hero shadow-lg" : " bg-transparent bg-hero"
       )}
     >
       <Container>

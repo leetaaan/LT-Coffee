@@ -1,68 +1,35 @@
 import getProducts from "@/actions/get-products";
 import Container from "@/components/container";
 import { PopularContent } from "@/components/popular-content";
+import SwiperComponent from "@/components/swiper";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Coffee, FileHeart, Truck } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+
 
 export const revalidate = 0;
 
 const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
+  const productsTea = await getProducts({ category: "Trà" });
+
 
   return (
     <>
       <Container className="px-4 md:px-12">
-        <section className="grid grid-cols-1 md:grid-cols-2 py-12 pt-16">
-          <div className="flex flex-col items-start justify-start gap-4">
-            <p className="px-6 py-1 rounded-full text-neutral-500 border border-gray-300">
-              Cảm thấy buồn chán?
-            </p>
-            <h2 className="text-5xl font-bold tracking-wider uppercase text-neutral-700 my-4">
-              Hãy đến ngay
-              <span className="block py-4">LT Coffee và chọn món thôi!!!</span>
-            </h2>
-
-            <p className="text-base text-center md:text-left text-neutral-500 my-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-              accusamus voluptas sint corrupti repudiandae? Dicta, repellendus.
-              Voluptatibus tempore ipsam consectetur aspernatur dolore, earum
-              nulla deleniti non ullam nostrum quae impedit!
-            </p>
-
-            <div className="my-4 flex text-center justify-center gap-6 w-full md:w-auto">
-              <Link href={"/menu"}>
-                <Button className="px-8 md:px-16 py-4 md:py-6 rounded-full bg-hero">
-                  Chọn món
-                </Button>
-              </Link>
-              <Link href={"/"}>
-                <Button
-                  variant={"outline"}
-                  className="px-8 md:px-16 py-4 md:py-6 rounded-full"
-                >
-                  Khám phá thêm
-                </Button>
-              </Link>
-            </div>
-          </div>
-          <div className="">
-            <div className="relative w-full h-[560px] flex items-center justify-center">
-              <Image
-                src="/img/Coffee.png"
-                alt="Hero"
-                className="w-full object-contain absolute"
-                fill
-              />
-            </div>
-          </div>
+        <section className="w-full h-[500px] py-2">
+          <SwiperComponent />
         </section>
 
+        <h2 className="text-xl md:text-2xl font-bold tracking-wider uppercase text-neutral-700 my-10">
+          Sản phẩm phổ biến
+        </h2>
         <section className="grid grid-cols-1 md:grid-cols-4 gap-6 gap-y-20 md:gap-12 my-4 py-12">
           {products?.slice(0, 4).map((item) => (
-            <PopularContent data={item} key={item.id} />
+            <>
+              <PopularContent data={item} key={item.id} />
+            </>
           ))}
         </section>
 
@@ -110,6 +77,17 @@ const HomePage = async () => {
           </div>
         </section>
 
+        <h2 className="text-xl md:text-2xl font-bold tracking-wider uppercase text-neutral-700 my-10">
+          Trưa nóng bức đã có trà thanh mát
+        </h2>
+        <section className="grid grid-cols-1 md:grid-cols-4 gap-6 gap-y-20 md:gap-12 my-4 py-12">
+          {productsTea?.slice(0, 4).map((item) => (
+            <>
+              <PopularContent data={item} key={item.id} />
+            </>
+          ))}
+        </section>
+
         <section className="my-4 py-12 flex flex-col items-center justify-center">
           <h2 className="text-5xl md:text-5xl font-bold tracking-wider uppercase text-neutral-700 my-4">
             Các chuyên gia của LT Coffee
@@ -124,7 +102,7 @@ const HomePage = async () => {
                 fill
                 src="/img/left.png"
                 alt="chef one"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain hover:scale-110"
               />
             </Card>
 
@@ -133,7 +111,7 @@ const HomePage = async () => {
                 fill
                 src="/img/center.png"
                 alt="chef one"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain hover:scale-110"
               />
             </Card>
 
@@ -142,7 +120,7 @@ const HomePage = async () => {
                 fill
                 src="/img/right.png"
                 alt="chef one"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain hover:scale-110"
               />
             </Card>
           </div>

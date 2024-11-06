@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-white ">
       <Container>
-        <div className="w-full  bg-hero/70 grid grid-cols-2 md:grid-cols-4 px-4 md:px-12 py-8">
+        <div className="w-full  bg-hero grid grid-cols-2 md:grid-cols-4 px-4 md:px-12 py-8">
           <div className="flex flex-col items-start justify-start gap-3">
             <h2 className="text-3xl font-semibold">Menu</h2>
             <p className="text-white text-sm">Trang chủ</p>
@@ -29,13 +29,13 @@ const Footer = () => {
 
           <div className="flex flex-col items-start justify-start gap-3">
             <h2 className="text-3xl font-semibold">Đăng ký để nhận ưu đãi mới nhất</h2>
-            <div className="w-full rounded-md border-2 border-hero flex items-center justify-center">
+            <div className="w-full rounded-md border-2 border-primary flex items-center justify-center">
               <input
                 type="text"
                 placeholder="Enter your Email"
-                className="h-full bg-transparent pl-4 text-sm text-white w-full outline-none border-none"
+                className="h-full bg-transparent pl-4 text-sm text-white w-full outline-none border-none placeholder:text-white"
               />
-              <Button className="bg-hero rounded-tr-none rounded-br-none hover:bg-hero">
+              <Button className=" bg-slate-800 rounded-tr-none rounded-br-none hover:bg-green-400">
                 Subscribe
               </Button>
             </div>
